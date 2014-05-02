@@ -183,9 +183,9 @@ class DEQue{ // class start
     private function setAddNum($endpoint){
         if($this->_type==6){
             if($endpoint==1){
-                $this->_front_num ++;
+                $this->_frontNum ++;
             }else{
-                $this->_rear_num ++;
+                $this->_rearNum ++;
             }
         }
     }
@@ -197,9 +197,9 @@ class DEQue{ // class start
     private function setRemoveNum($endpoint){
         if($this->_type==6){
             if($endpoint==1){
-                $this->_front_num --;
+                $this->_frontNum --;
             }else{
-                $this->_rear_num --;
+                $this->_rearNum --;
             }
         }
     }
@@ -211,9 +211,9 @@ class DEQue{ // class start
     private function checkRemove($endpoint){
         if($this->_type==6){
             if($endpoint==1){
-                return $this->_front_num>0;
+                return $this->_frontNum>0;
             }else{
-                return $this->_rear_num>0;
+                return $this->_rearNum>0;
             }
         }
         return true;
