@@ -9,9 +9,9 @@
 *   public  frontRemove  前端出列
 *   public  rearAdd      后端入列
 *   pulbic  rearRemove   后端出列
-*   public  clear        清空对列
-*   public  isFull       判断对列是否已满
-*   private getLength    获取对列长度
+*   public  clear        清空队列
+*   public  isFull       判断队列是否已满
+*   private getLength    获取队列长度
 *   private setAddNum    记录入列,输出依赖输入时调用
 *   private setRemoveNum 记录出列,输出依赖输入时调用
 *   private checkRemove  检查是否输出依赖输入
@@ -19,22 +19,22 @@
 
 class DEQue{ // class start
 
-    private $_queue = array(); // 对列
-    private $_maxLength = 0;   // 对列最大长度，0表示不限
-    private $_type = 0;        // 对列类型
+    private $_queue = array(); // 队列
+    private $_maxLength = 0;   // 队列最大长度，0表示不限
+    private $_type = 0;        // 队列类型
     private $_frontNum = 0;    // 前端插入的数量
     private $_rearNum = 0;     // 后端插入的数量
 
 
     /** 初始化
-    * @param $type       对列类型
+    * @param $type       队列类型
     *                    1:两端均可输入输出
     *                    2:前端只能输入，后端可输入输出
     *                    3:前端只能输出，后端可输入输出
     *                    4:后端只能输入，前端可输入输出
     *                    5:后端只能输出，前端可输入输出
     *                    6:两端均可输入输出，在哪端输入只能从哪端输出
-    * @param $maxlength  对列最大长度
+    * @param $maxlength  队列最大长度
     */
     public function __construct($type=1, $maxlength=0){
         $this->_type = in_array($type, array(1,2,3,4,5,6))? $type : 1;
@@ -146,7 +146,7 @@ class DEQue{ // class start
     }
 
 
-    /** 清空对列
+    /** 清空队列
     * @return boolean
     */
     public function clear(){
@@ -157,7 +157,7 @@ class DEQue{ // class start
     }
 
 
-    /** 判断对列是否已满
+    /** 判断队列是否已满
     * @return boolean
     */
     public function isFull(){
@@ -169,7 +169,7 @@ class DEQue{ // class start
     }
 
 
-    /** 获取当前对列长度
+    /** 获取当前队列长度
     * @return int
     */
     private function getLength(){
